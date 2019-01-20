@@ -15,6 +15,8 @@
 		CCCAD38F21F48D5600A6D59B /* EventReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCAD38E21F48D5600A6D59B /* EventReducerTests.swift */; };
 		CCCAD39A21F4946D00A6D59B /* ButtonRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCAD39921F4946D00A6D59B /* ButtonRowCell.swift */; };
 		CCCAD39C21F496A800A6D59B /* ButtonRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCCAD39B21F496A800A6D59B /* ButtonRowCell.xib */; };
+		CCCAD3A021F4E73900A6D59B /* EventEmmiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCAD39F21F4E73900A6D59B /* EventEmmiter.swift */; };
+		CCCAD3A221F4E76500A6D59B /* DemoEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCAD3A121F4E76500A6D59B /* DemoEventEmitter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		CCCAD39021F48D5600A6D59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCCAD39921F4946D00A6D59B /* ButtonRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRowCell.swift; sourceTree = "<group>"; };
 		CCCAD39B21F496A800A6D59B /* ButtonRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonRowCell.xib; sourceTree = "<group>"; };
+		CCCAD39F21F4E73900A6D59B /* EventEmmiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEmmiter.swift; sourceTree = "<group>"; };
+		CCCAD3A121F4E76500A6D59B /* DemoEventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoEventEmitter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 		CCCAD37821F48D5200A6D59B /* EventReducer */ = {
 			isa = PBXGroup;
 			children = (
+				CCCAD39E21F4E72400A6D59B /* Reducer */,
+				CCCAD39D21F4E71100A6D59B /* EventEmmiter */,
 				CCCAD37921F48D5200A6D59B /* AppDelegate.swift */,
 				CCCAD37B21F48D5200A6D59B /* ViewController.swift */,
 				CCCAD37D21F48D5200A6D59B /* Main.storyboard */,
@@ -100,6 +106,22 @@
 				CCCAD39021F48D5600A6D59B /* Info.plist */,
 			);
 			path = EventReducerTests;
+			sourceTree = "<group>";
+		};
+		CCCAD39D21F4E71100A6D59B /* EventEmmiter */ = {
+			isa = PBXGroup;
+			children = (
+				CCCAD39F21F4E73900A6D59B /* EventEmmiter.swift */,
+				CCCAD3A121F4E76500A6D59B /* DemoEventEmitter.swift */,
+			);
+			path = EventEmmiter;
+			sourceTree = "<group>";
+		};
+		CCCAD39E21F4E72400A6D59B /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reducer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +228,8 @@
 			files = (
 				CCCAD37C21F48D5200A6D59B /* ViewController.swift in Sources */,
 				CCCAD39A21F4946D00A6D59B /* ButtonRowCell.swift in Sources */,
+				CCCAD3A021F4E73900A6D59B /* EventEmmiter.swift in Sources */,
+				CCCAD3A221F4E76500A6D59B /* DemoEventEmitter.swift in Sources */,
 				CCCAD37A21F48D5200A6D59B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
