@@ -44,12 +44,22 @@ enum CellColor: Int {
 
 class ButtonRowCell: UITableViewCell {
 	
+	func setEventEmitter(_ eventEmitter: DemoEventEmitter) {
+		
+		let buttons = contentView.subviews.compactMap { $0 as? Button }
+		for button in buttons {
+			button.eventEmitter = eventEmitter
+		}
+	}
 }
 
-class Button: UIButton {
-	
+class Button: UIButton, EventEmitting {
+
 	var color: CellColor = .blue
 	var value = Int.random(in: 0..<10)
+	
+	typealias EventEmitter = DemoEventEmitter
+	var eventEmitter: DemoEventEmitter?
 	
 	override func awakeFromNib() {
 		updateRandom()

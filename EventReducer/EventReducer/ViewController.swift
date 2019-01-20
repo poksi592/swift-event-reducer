@@ -8,12 +8,17 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
-
+class ViewController: UITableViewController, EventEmitting {
+	
+	typealias EventEmitter = DemoEventEmitter
+	var eventEmitter: DemoEventEmitter? = DemoEventEmitter()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		let nib = UINib.init(nibName: "ButtonRowCell", bundle: nil)
+		tableView.register(nib, forCellReuseIdentifier: "cell")
 
-		tableView.register(UINib(nibName: "ButtonRowCell", bundle: nil), forCellReuseIdentifier: "cell")
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
 	}
@@ -32,11 +37,11 @@ extension ViewController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! ButtonRowCell
+		if let eventEmitter = eventEmitter {
+			cell.setEventEmitter(eventEmitter)
+		}
 		return cell
 	}
 }
 
-extension ViewController {
-	
-}
 
