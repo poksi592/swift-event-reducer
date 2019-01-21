@@ -17,6 +17,8 @@
 		CCCAD39C21F496A800A6D59B /* ButtonRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCCAD39B21F496A800A6D59B /* ButtonRowCell.xib */; };
 		CCCAD3A021F4E73900A6D59B /* EventEmmiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCAD39F21F4E73900A6D59B /* EventEmmiter.swift */; };
 		CCCAD3A221F4E76500A6D59B /* DemoEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCAD3A121F4E76500A6D59B /* DemoEventEmitter.swift */; };
+		CCCAD3A421F6265F00A6D59B /* StateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCAD3A321F6265F00A6D59B /* StateReducer.swift */; };
+		CCCAD3A621F6267B00A6D59B /* DemoReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCAD3A521F6267B00A6D59B /* DemoReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		CCCAD39B21F496A800A6D59B /* ButtonRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonRowCell.xib; sourceTree = "<group>"; };
 		CCCAD39F21F4E73900A6D59B /* EventEmmiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEmmiter.swift; sourceTree = "<group>"; };
 		CCCAD3A121F4E76500A6D59B /* DemoEventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoEventEmitter.swift; sourceTree = "<group>"; };
+		CCCAD3A321F6265F00A6D59B /* StateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateReducer.swift; sourceTree = "<group>"; };
+		CCCAD3A521F6267B00A6D59B /* DemoReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 		CCCAD39E21F4E72400A6D59B /* Reducer */ = {
 			isa = PBXGroup;
 			children = (
+				CCCAD3A321F6265F00A6D59B /* StateReducer.swift */,
+				CCCAD3A521F6267B00A6D59B /* DemoReducer.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -226,10 +232,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCCAD3A621F6267B00A6D59B /* DemoReducer.swift in Sources */,
 				CCCAD37C21F48D5200A6D59B /* ViewController.swift in Sources */,
 				CCCAD39A21F4946D00A6D59B /* ButtonRowCell.swift in Sources */,
 				CCCAD3A021F4E73900A6D59B /* EventEmmiter.swift in Sources */,
 				CCCAD3A221F4E76500A6D59B /* DemoEventEmitter.swift in Sources */,
+				CCCAD3A421F6265F00A6D59B /* StateReducer.swift in Sources */,
 				CCCAD37A21F48D5200A6D59B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

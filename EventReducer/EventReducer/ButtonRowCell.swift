@@ -39,7 +39,6 @@ enum CellColor: Int {
 			return UIColor.white
 		}
 	}
-
 }
 
 class ButtonRowCell: UITableViewCell {
@@ -58,6 +57,7 @@ class Button: UIButton, EventEmitting {
 	var color: CellColor = .blue
 	var value = Int.random(in: 0..<10)
 	
+	// MARK: EventEmitting
 	typealias EventEmitter = DemoEventEmitter
 	var eventEmitter: DemoEventEmitter?
 	
@@ -74,4 +74,20 @@ class Button: UIButton, EventEmitting {
 		setTitle(String(value), for: .normal)
 	}
 }
+
+extension Button {
+	
+	func setupTap() {
+		self.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+	}
+	
+	@objc func buttonTapped(sender: Button) {
+		
+		if let eventEmitter = eventEmitter {
+			eventEmitter.notify(eventPayload: ["color" : color,
+											   "value" : value])
+		}
+	}
+}
+
 

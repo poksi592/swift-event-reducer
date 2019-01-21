@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UITableViewController, EventEmitting {
 	
+	// MARK: EventEmitting
 	typealias EventEmitter = DemoEventEmitter
 	var eventEmitter: DemoEventEmitter? = DemoEventEmitter()
 	
