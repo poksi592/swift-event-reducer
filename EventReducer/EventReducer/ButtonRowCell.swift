@@ -45,9 +45,11 @@ class ButtonRowCell: UITableViewCell {
 	
 	func setEventEmitter(_ eventEmitter: DemoEventEmitter) {
 		
-		let buttons = contentView.subviews.compactMap { $0 as? Button }
+		guard let stackView = contentView.subviews.compactMap({ $0 as? UIStackView }).first  else { return }
+		let buttons = stackView.arrangedSubviews.compactMap({ $0 as? Button })
 		for button in buttons {
 			button.eventEmitter = eventEmitter
+			button.updateRandom()
 		}
 	}
 }
@@ -59,10 +61,11 @@ class Button: UIButton, EventEmitting {
 	
 	// MARK: EventEmitting
 	typealias EventEmitter = DemoEventEmitter
-	var eventEmitter: DemoEventEmitter?
+	weak var eventEmitter: DemoEventEmitter?
 	
 	override func awakeFromNib() {
 		updateRandom()
+		setupTap()
 	}
 	
 	func updateRandom() {
@@ -87,6 +90,20 @@ extension Button {
 			eventEmitter.notify(eventPayload: ["color" : color,
 											   "value" : value])
 		}
+		animate(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.8, y: 0.8))
+	}
+	
+	private func animate(_ button: UIButton, transform: CGAffineTransform) {
+		UIView.animate(withDuration: 0.1,
+					   delay: 0,
+					   usingSpringWithDamping: 0.5,
+					   initialSpringVelocity: 3,
+					   options: [.curveEaseInOut],
+					   animations: {
+						button.layer.setAffineTransform(transform)
+		}, completion: { (finished: Bool) in
+			button.transform =  CGAffineTransform.identity
+		})
 	}
 }
 

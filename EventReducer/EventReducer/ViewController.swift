@@ -14,6 +14,8 @@ class ViewController: UITableViewController, EventEmitting {
 	typealias EventEmitter = DemoEventEmitter
 	var eventEmitter: DemoEventEmitter? = DemoEventEmitter()
 	
+	var stateReducer: DemoStateReducer?
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -22,6 +24,16 @@ class ViewController: UITableViewController, EventEmitting {
 
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
+		
+		stateReducer = DemoStateReducer(eventEmitter: eventEmitter!)
+		subscribeForOverlay()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		stateReducer?.state = .cleanSlate
+		tableView.reloadData()
 	}
 }
 
@@ -42,6 +54,27 @@ extension ViewController {
 			cell.setEventEmitter(eventEmitter)
 		}
 		return cell
+	}
+}
+
+extension ViewController {
+	
+	func subscribeForOverlay() {
+		
+		stateReducer?.subscribe { state in
+			
+			if case .overflow(_) = state {
+				self.performSegue(withIdentifier: "colorOverlay", sender: self)
+			}
+		}
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	
+		let vc = segue.destination
+		if case .overflow(let exceedingColor)? = stateReducer?.state {
+			vc.view.backgroundColor = exceedingColor.backgroundColor
+		}
 	}
 }
 

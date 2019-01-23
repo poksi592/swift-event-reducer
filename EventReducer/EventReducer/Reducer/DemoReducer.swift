@@ -12,7 +12,7 @@ enum DemoState {
 	
 	case cleanSlate
 	case progress([CellColor : Int])
-	case overflow
+	case overflow(color: CellColor)
 }
 
 class DemoStateReducer: StateReducerProtocol, EventEmitting {
@@ -23,9 +23,6 @@ class DemoStateReducer: StateReducerProtocol, EventEmitting {
 	
 	typealias State = DemoState
 	
-//	 ?????
-	static let shared = DemoStateReducer()
-	
 	var state: DemoState = .cleanSlate {
 		didSet {
 			notify()
@@ -35,6 +32,11 @@ class DemoStateReducer: StateReducerProtocol, EventEmitting {
 	var callbacks: [StateCallbackClosure] = []
 	
 	init() {}
+	
+	init(eventEmitter: DemoEventEmitter) {
+		self.eventEmitter = eventEmitter
+		subscribeToEventEmitter()
+	}
 }
 
 extension DemoStateReducer {
@@ -50,13 +52,14 @@ extension DemoStateReducer {
 	}
 	
 	func reduce(color: CellColor, value: Int) {
-		if case .progress(let colorValues) = state {
-			let newValue = colorValues[color] ?? 0 + value
-			state = .progress([color : newValue])
+		if case .progress(var colorValues) = state {
+			colorValues[color] = (colorValues[color] ?? 0) + value
+			state = .progress(colorValues)
 		}
 		else {
 			state = .progress([color : value])
 		}
+		reduceToLimit()
 	}
 	
 	func reduceToLimit() {
@@ -75,7 +78,7 @@ extension DemoStateReducer {
 				}
 			}
 			if let exceedingColor = color {
-				
+				state = .overflow(color: exceedingColor)
 			}
 		}
 	}

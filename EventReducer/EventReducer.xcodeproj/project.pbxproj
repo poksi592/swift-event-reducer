@@ -19,6 +19,7 @@
 		CCCAD3A221F4E76500A6D59B /* DemoEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCAD3A121F4E76500A6D59B /* DemoEventEmitter.swift */; };
 		CCCAD3A421F6265F00A6D59B /* StateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCAD3A321F6265F00A6D59B /* StateReducer.swift */; };
 		CCCAD3A621F6267B00A6D59B /* DemoReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCAD3A521F6267B00A6D59B /* DemoReducer.swift */; };
+		CCCAD3AA21F8EF3700A6D59B /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCAD3A921F8EF3700A6D59B /* OverlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		CCCAD3A121F4E76500A6D59B /* DemoEventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoEventEmitter.swift; sourceTree = "<group>"; };
 		CCCAD3A321F6265F00A6D59B /* StateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateReducer.swift; sourceTree = "<group>"; };
 		CCCAD3A521F6267B00A6D59B /* DemoReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoReducer.swift; sourceTree = "<group>"; };
+		CCCAD3A921F8EF3700A6D59B /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				CCCAD39D21F4E71100A6D59B /* EventEmmiter */,
 				CCCAD37921F48D5200A6D59B /* AppDelegate.swift */,
 				CCCAD37B21F48D5200A6D59B /* ViewController.swift */,
+				CCCAD3A921F8EF3700A6D59B /* OverlayViewController.swift */,
 				CCCAD37D21F48D5200A6D59B /* Main.storyboard */,
 				CCCAD38021F48D5600A6D59B /* Assets.xcassets */,
 				CCCAD38221F48D5600A6D59B /* LaunchScreen.storyboard */,
@@ -239,6 +242,7 @@
 				CCCAD3A221F4E76500A6D59B /* DemoEventEmitter.swift in Sources */,
 				CCCAD3A421F6265F00A6D59B /* StateReducer.swift in Sources */,
 				CCCAD37A21F48D5200A6D59B /* AppDelegate.swift in Sources */,
+				CCCAD3AA21F8EF3700A6D59B /* OverlayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
