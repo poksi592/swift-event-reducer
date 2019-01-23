@@ -71,9 +71,10 @@ extension ViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 	
-		let vc = segue.destination
+		guard let vc = segue.destination as? OverlayViewController else { return }
 		if case .overflow(let exceedingColor)? = stateReducer?.state {
 			vc.view.backgroundColor = exceedingColor.backgroundColor
+			vc.closeButton.tintColor = exceedingColor.tintColor
 		}
 	}
 }

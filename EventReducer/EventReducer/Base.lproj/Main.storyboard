@@ -51,9 +51,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85c-vp-v4v">
-                                <rect key="frame" x="112.5" y="298.5" width="150" height="70"/>
+                                <rect key="frame" x="100" y="298.5" width="175" height="70"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Dismiss"/>
                                 <connections>
                                     <action selector="tapCloseButtonWithSender:" destination="Naj-y4-4hM" eventType="touchUpInside" id="mj1-VN-BpR"/>
                                 </connections>
