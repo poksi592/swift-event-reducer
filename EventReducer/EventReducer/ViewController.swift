@@ -62,7 +62,6 @@ extension ViewController {
 	func subscribeForOverlay() {
 		
 		stateReducer?.subscribe { state in
-			
 			if case .overflow(_) = state {
 				self.performSegue(withIdentifier: "colorOverlay", sender: self)
 			}
@@ -70,7 +69,6 @@ extension ViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-	
 		guard let vc = segue.destination as? OverlayViewController else { return }
 		if case .overflow(let exceedingColor)? = stateReducer?.state {
 			vc.view.backgroundColor = exceedingColor.backgroundColor

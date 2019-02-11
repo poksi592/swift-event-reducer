@@ -67,16 +67,15 @@ extension DemoStateReducer {
 //		Reduces the state if any color exceedes the limit of 25
 		if case .progress(let colorValues) = state {
 			
-			let color: CellColor? = colorValues.reduce(nil) { (currentValue, arg1) -> CellColor? in
+			let color: CellColor? = colorValues.map { (key, value) -> CellColor? in
 				
-				let (key, value) = arg1
 				if value >= 25 {
 					return key
 				}
 				else {
 					return nil
 				}
-			}
+			}.compactMap { $0 }.first
 			if let exceedingColor = color {
 				state = .overflow(color: exceedingColor)
 			}
